@@ -16,7 +16,7 @@ RUN apk update && \
     sudo -iu $BUILD_USER http_proxy=$HTTP_PROXY https_proxy=$HTTPS_PROXY sh -xec 'cd aports/main/llvm6; abuild -r' && \
     cp /home/$BUILD_USER/.abuild/*.rsa.pub /etc/apk/keys && \
     apk add /home/$BUILD_USER/packages/main/$(uname -m)/*.apk && \
-    rm /home/$BUILD_USER/package/main/$(uname -m)/*.apk && \
+    rm /home/$BUILD_USER/packages/main/$(uname -m)/*.apk && \
     sudo -iu $BUILD_USER http_proxy=$HTTP_PROXY https_proxy=$HTTPS_PROXY sh -xec 'cd aports/main/clang; abuild -r' && \
     cp /home/$BUILD_USER/.abuild/*.rsa.pub /etc/apk/keys && \
     apk add /home/$BUILD_USER/packages/main/$(uname -m)/*.apk && \
